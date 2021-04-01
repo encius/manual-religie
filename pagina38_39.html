@@ -74,11 +74,15 @@
 					<p>Pentru a alege o lecție diferită, dați clic pe titlul lecției din Cuprinsul afișat în partea
 						stângă.
 					</p>
-					<p>Butonul <img class="" src="assets/images/statice.png" style="height: 30px;"> deschide activități de tip static, derulate prin intermediul butoanelor de navigare (<>).
+					<p>Butonul <img class="" src="assets/images/statice.png" style="height: 30px;"> deschide activități
+						de tip static, derulate prin intermediul butoanelor de navigare (<>).
 					</p>
-					<p>Butonul <img class="" src="assets/images/animate.png" style="height: 30px;"> deschide activități de tip animat. Pentru vizionare, se apasă butonul Redă <img class="" src="assets/images/play.png" style="height: 30px;">.
+					<p>Butonul <img class="" src="assets/images/animate.png" style="height: 30px;"> deschide activități
+						de tip animat. Pentru vizionare, se apasă butonul Redă <img class=""
+							src="assets/images/play.png" style="height: 30px;">.
 					</p>
-					<p>Butonul <img class="" src="assets/images/interactive.png" style="height: 30px;"> deschide activități de tip interactiv. Activitățile interactive sunt de tipul:
+					<p>Butonul <img class="" src="assets/images/interactive.png" style="height: 30px;"> deschide
+						activități de tip interactiv. Activitățile interactive sunt de tipul:
 					</p>
 					<ul>
 						<li>Bifează (unul sau mai multe răspunsuri corecte);</li>
@@ -207,7 +211,55 @@
 							<a href="assets/images/pagina38_39/fata.png" data-title="" data-toggle="lightbox"><img
 									class="figure-img img-fluid shadow rounded" src="assets/images/pagina38_39/fata.png"
 									style="max-width: 300px;" alt=""></a>
+							<span class="align-top"><a href="#"
+									onclick="$('#exercitiu').modal({'backdrop': 'static'});"><img class=""
+										src="assets/images/interactive.png" style="height: 50px;"></a></span>
 						</figure>
+						<div class="modal fade" id="exercitiu" tabindex="-1" role="dialog"
+							aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLongTitle">Exercitiu interactiv
+										</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<p>Descoperă versetul completând spațiile libere cu unul dintre următoarele
+											cuvinte: <em>iubește, iertate, iartă, Păcatele, mult.</em></p>
+										<div class="col-md-12">
+											<div id="mesaj" class="alert alert-info" role="alert">Completează toate căsuțele.</div>
+										</div>
+										<form id="exercitiu1" class=" form-inline input" role="form"
+											onsubmit="return validateForm()" method="post">
+											<p>„De aceea îți spun: <input type="text" class="form-control" id="cuvant1">
+												ei, care sunt multe, sunt <input type="text" class="form-control"
+													id="cuvant2">, căci a iubit <input type="text" class="form-control"
+													id="cuvant3"> . Dar
+												cui i se <input type="text" class="form-control" id="cuvant4"> puțin
+												<input type="text" class="form-control" id="cuvant5"> puțin.”</p>
+
+											<div class="row ">
+												<div class="col-md-12">
+													<button type="reset" class="reset btn btn-warning pull-left"
+														data-toggle="" data-recalc="" data-target="" data-canvas="">
+														Resetează
+													</button>
+													<button type="submit" class="check btn btn-success pull-right"
+														data-toggle="" data-recalc="" data-target="" data-canvas="">
+														Verifică
+													</button>
+												</div>
+											</div>
+										</form>
+
+
+									</div>
+								</div>
+							</div>
+						</div>
 						<h3>Aplicații</h3>
 						<ol>
 							<li>Te consideri mai bun decât alții?
@@ -237,8 +289,9 @@
 								Pavel.</li>
 						</ul>
 						<div class="float-right"><span class="align-baseline"><img
-									class="figure-img img-fluid shadow rounded" src="assets/images/pagina38_39/isus_barbat.png"
-									alt="" style="max-width: 300px;"></span>
+									class="figure-img img-fluid shadow rounded"
+									src="assets/images/pagina38_39/isus_barbat.png" alt=""
+									style="max-width: 300px;"></span>
 							<span class="align-top"><a href="#carousel" data-toggle="modal" data-target="#carousel"><img
 										class="" src="assets/images/animate.png" style="height: 50px;"></a></span>
 						</div><!-- Modal -->
@@ -249,7 +302,8 @@
 									<div class="modal-header">
 										<h5 class="modal-title" id="exampleModalLongTitle">Videoclip
 										</h5>
-										<button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="document.getElementById('holyVideo').pause();">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close"
+											onclick="document.getElementById('holyVideo').pause();">
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>
@@ -257,7 +311,7 @@
 										<video id="holyVideo" width="720" height="405" controls>
 											<source src="assets/video/Pg. 39_holy-week.mp4" type="video/mp4">
 											Your browser does not support the video tag.
-									</video> 
+										</video>
 									</div>
 								</div>
 							</div>
@@ -312,7 +366,49 @@
 	<script src="assets/plugins/jquery.scrollTo.min.js"></script>
 	<script src="assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script>
 	<script src="assets/js/docs.js"></script>
-
+	<script>
+		function validateForm() {
+			event.preventDefault();
+			var cuv1 = document.forms["exercitiu1"]["cuvant1"].value;
+			var cuv2 = document.forms["exercitiu1"]["cuvant2"].value;
+			var cuv3 = document.forms["exercitiu1"]["cuvant3"].value;
+			var cuv4 = document.forms["exercitiu1"]["cuvant4"].value;
+			var cuv5 = document.forms["exercitiu1"]["cuvant5"].value;
+			if (cuv1 == "" || cuv2 == "" || cuv3 == "" || cuv4 == "" || cuv5 == "") {
+				alert("Completează toate căsuțele!");
+				return false;
+			}
+			var corecte = 0;
+			if (cuv1 == "Păcatele") {
+				var element = document.getElementById("cuvant1");
+				element.classList.add("is-valid");
+				corecte++;
+			}
+			if (cuv2 == "iertate") {
+				var element = document.getElementById("cuvant2");
+				element.classList.add("is-valid");
+				corecte++;
+			}
+			if (cuv3 == "mult") {
+				var element = document.getElementById("cuvant3");
+				element.classList.add("is-valid");
+				corecte++;
+			}
+			if (cuv4 == "iartă") {
+				var element = document.getElementById("cuvant4");
+				element.classList.add("is-valid");
+				corecte++;
+			}
+			if (cuv5 == "iubește") {
+				var element = document.getElementById("cuvant5");
+				element.classList.add("is-valid");
+				corecte++;
+			}
+			if (corecte == 5) {
+				document.getElementById("mesaj").innerHTML = "Bravo! Ai completat corect toate cuvintele!";
+			}
+		}
+	</script>
 </body>
 
 </html>
