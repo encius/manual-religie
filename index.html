@@ -44,7 +44,8 @@
 				</div>
 				<!--//docs-logo-wrapper-->
 				<div class="docs-top-utilities d-flex justify-content-end align-items-center">
-					<a href="ajutor.html" class="btn btn-primary d-none d-lg-flex">Ajutor</a>
+					<a href="#ajutor" data-toggle="modal" data-target="#ajutor"
+						class="btn btn-primary d-none d-lg-flex">Ajutor</a>
 				</div>
 				<!--//docs-top-utilities-->
 			</div>
@@ -53,7 +54,42 @@
 		<!--//branding-->
 	</header>
 	<!--//header-->
+	<div class="modal fade" id="ajutor" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">Ajutor
+					</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"
+						onclick="document.getElementById('hwVideo').pause();">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>Pentru a parcurge o lecție, derulați pagina. </p>
+					<p>Pentru a trece la lecția următoare, apăsați butonul din dreapta jos a paginii. Pentru a reveni la
+						lecția anterioară, apăsați butonul din stânga jos a paginii.
+					</p>
+					<p>Pentru a alege o lecție diferită, dați clic pe titlul lecției din Cuprinsul afișat în partea
+						stângă.
+					</p>
+					<p>Butonul <img class="" src="assets/images/statice.png" style="height: 30px;"> deschide activități de tip static, derulate prin intermediul butoanelor de navigare (<>).
+					</p>
+					<p>Butonul <img class="" src="assets/images/animate.png" style="height: 30px;"> deschide activități de tip animat. Pentru vizionare, se apasă butonul Redă <img class="" src="assets/images/play.png" style="height: 30px;">.
+					</p>
+					<p>Butonul <img class="" src="assets/images/interactive.png" style="height: 30px;"> deschide activități de tip interactiv. Activitățile interactive sunt de tipul:
+					</p>
+					<ul>
+						<li>Bifează (unul sau mai multe răspunsuri corecte);</li>
+						<li>Completează spațiile libere;</li>
+						<li>Realizează corespondența.</li>
+					</ul>
 
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="docs-wrapper">
 		<div id="docs-sidebar" class="docs-sidebar">
 			<nav id="docs-nav" class="docs-nav navbar">
@@ -78,7 +114,7 @@
 		<div class="docs-content">
 			<div class="container">
 				<article class="docs-article" id="intro">
-				<h1>Manual Religie clasa a IV-a</h1>
+					<h1>Manual Religie clasa a IV-a</h1>
 				</article>
 			</div>
 
